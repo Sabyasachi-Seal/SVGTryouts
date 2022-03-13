@@ -1,0 +1,78 @@
+<svg viewBox="0 0 800 600">
+    <style>
+        HTML, BODY{
+            height: 100%;
+       }
+        BODY {
+            background: #000000;
+            background-size: 0.7em 100%;
+            font: 16em/1 Arial;
+       }
+        .text--line {
+            font-size: 0.6em;
+       }
+        svg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+       }
+        .text-copy {
+            fill: none;
+            font-size: 0.75em;
+            stroke: white;
+            stroke-dasharray: 4% 20%;
+            stroke-width: 3px;
+            animation: stroke-offset 5s infinite linear;
+       }
+        .text-copy:nth-child(1) {
+            stroke: #FF8000;
+            stroke-dashoffset: 25%;
+       }
+       .text-copy:nth-child(2) {
+        stroke: #f7f7f7;
+        stroke-dashoffset: 50%;
+        }
+       .text-copy:nth-child(3) {
+            stroke: #00FF00;
+            stroke-dashoffset: 75%;
+       }
+        .text-copy:nth-child(4) {
+            stroke: #0000FF;
+            stroke-dashoffset: 100%;
+       }
+        @keyframes stroke-offset {
+            50% {
+                stroke-dashoffset: 35%;
+                stroke-dasharray: 0% 50%;
+           }
+       }       
+    </style>
+    <symbol id="s-text">
+      <text text-anchor="middle"
+            x="50%"
+            y="35%"
+            class="text--line"
+            >
+        I love
+      </text>
+      <text text-anchor="middle"
+            x="50%"
+            y="68%"
+            class="text--line2"
+            >
+        INDIA !
+      </text>
+    </symbol>
+    <g class="g-ants">
+        <use xlink:href="#s-text"
+          class="text-copy"></use>     
+        <use xlink:href="#s-text"
+          class="text-copy"></use>     
+        <use xlink:href="#s-text"
+          class="text-copy"></use>     
+        <use xlink:href="#s-text"
+          class="text-copy"></use>     
+        <use xlink:href="#s-text"
+          class="text-copy"></use>     
+      </g>
+  </svg>
