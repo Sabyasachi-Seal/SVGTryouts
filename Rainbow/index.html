@@ -1,78 +1,101 @@
-<svg viewBox="0 0 800 600">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+
     <style>
-        HTML, BODY{
-            height: 100%;
-       }
-        BODY {
-            background: #00000000;
-            background-size: 0.7em 100%;
-            font: 16em/1 Arial;
-       }
-        .text--line {
-            font-size: 0.6em;
-       }
-        svg {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-       }
-        .text-copy {
-            fill: none;
-            font-size: 0.75em;
-            stroke: white;
-            stroke-dasharray: 10% 10%;
-            stroke-width: 5px;
-            animation: stroke-offset 5s infinite linear;
-       }
-        .text-copy:nth-child(1) {
-            stroke: #FF8000;
-            stroke-dashoffset: 25%;
-       }
-       .text-copy:nth-child(2) {
-        stroke: #f7f7f7;
-        stroke-dashoffset: 50%;
+      @import url(https://fonts.googleapis.com/css?family=Life+Savers);
+
+      html,
+      body {
+        height: 100%;
+        font-weight: 800;
+      }
+
+      body {
+        background: #000;
+        font-family: "Bradley Hand, cursive";
+      }
+
+      svg {
+        display: flex;
+        font: 15em "Bradley Hand, cursive";
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        justify-content: center;
+      }
+
+      text {
+        letter-spacing: 10px;
+      }
+
+      .letter {
+        fill: none;
+        stroke: white;
+        stroke-dasharray: 6% 29%;
+        stroke-width: 5px;
+        stroke-dashoffset: 0%;
+        animation: stroke-offset 5.5s infinite linear;
+      }
+
+      .letter:nth-child(1) {
+        stroke: #f39c12;
+        animation-delay: -1;
+      }
+
+      .letter:nth-child(2) {
+        stroke: #ecf0f1;
+        animation-delay: -2s;
+      }
+
+      .letter:nth-child(3) {
+        stroke: #3498db;
+        animation-delay: -3s;
+      }
+
+      .letter:nth-child(4) {
+        stroke: #7f8c8d;
+        animation-delay: -4s;
+      }
+
+      .letter:nth-child(5) {
+        stroke: #c0392b;
+        animation-delay: -5s;
+      }
+
+      @keyframes stroke-offset {
+        100% {
+          stroke-dashoffset: -35%;
         }
-       .text-copy:nth-child(3) {
-            stroke: #00FF00;
-            stroke-dashoffset: 75%;
-       }
-        .text-copy:nth-child(4) {
-            stroke: #0000FF;
-            stroke-dashoffset: 100%;
-       }
-        @keyframes stroke-offset {
-            50% {
-                stroke-dashoffset: 35%;
-                <!-- stroke-dasharray: 10% 50%; -->
-           }
-       }       
+      }
     </style>
-    <symbol id="s-text">
-      <text text-anchor="middle"
-            x="50%"
-            y="35%"
-            class="text--line"
-            >
-        Sabyasachi
-      </text>
-      <text text-anchor="middle"
-            x="50%"
-            y="68%"
-            class="text--line2"
-            >
-        Seal
-      </text>
-    </symbol>
-    <g class="g-ants">
-        <use xlink:href="#s-text"
-          class="text-copy"></use>     
-        <use xlink:href="#s-text"
-          class="text-copy"></use>     
-        <use xlink:href="#s-text"
-          class="text-copy"></use>     
-        <use xlink:href="#s-text"
-          class="text-copy"></use>     
-        <use xlink:href="#s-text"
-          class="text-copy"></use>     
+
+    <script>
+      window.console = window.console || function (t) {};
+    </script>
+
+    <script>
+      if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+      }
+    </script>
+  </head>
+
+  <body translate="no">
+    <svg viewBox="0 0 1500 300">
+      <symbol id="s-text">
+        <text text-anchor="middle" x="50%" y="80%">Sabyasachi</text>
+      </symbol>
+
+      <g class="g-ants">
+        <use xlink:href="#s-text" class="letter"></use>
+        <use xlink:href="#s-text" class="letter"></use>
+        <use xlink:href="#s-text" class="letter"></use>
+        <use xlink:href="#s-text" class="letter"></use>
+        <use xlink:href="#s-text" class="letter"></use>
       </g>
-  </svg>
+    </svg>
+  </body>
+</html>
